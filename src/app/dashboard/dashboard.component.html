@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="container">
+    <h3 class="card-header">THE HISTORY</h3>
+    <div class="card-body">
+
+      <p>
+        <button class="btn btn-primary btn-lg" (click)="openModal(newReceiptModal)">Create new receipt</button>
+      </p>
+
+      <preload-table
+                     [fields]="dashboardFields"
+                     [data]="tableData$ | obsLog:'Dashboard table' | async"
+      ></preload-table>
+
+    </div>
+  </div>
+
+  <ng-template #newReceiptModal>
+    <div class="modal-header" role="dialog">
+      <h4 class="modal-title" id="modal-basic-title">Create new receipt form</h4>
+    </div>
+    <div class="modal-body">
+      <p>Yo!</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark">Save</button>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,24 @@
+<nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <div class="navbar-header">
+    <img class="navbar-brand" [src]="userImage" />
+    <span>Welcome, my dear friend</span>
+  </div>
+
+  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+    &#9776;
+  </button>
+
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto" ngbNav>
+      <li class="nav-item ml-4" [ngClass]="{ 'active': route.url === link.fragment }" ngbNavItem *ngFor="let link of leftBarMenu">
+        <a ngbNavLink [routerLink]="link.fragment" >{{ link.title }}</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" ngbNav>
+      <li class="nav-item ml-4" [ngClass]="{ 'active': route.url === link.fragment }" ngbNavItem *ngFor="let link of rightBarMenu">
+        <a ngbNavLink [routerLink]="link.fragment" >{{ link.title }}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+

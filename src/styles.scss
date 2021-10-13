@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+:host {
+  font-family: Lato-Regular;
+  font-size: 14px;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: rgb(52, 52, 52); }
+
+.spacer {
+  flex: 1;
+}
+
+body {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-image: url('assets/background.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
